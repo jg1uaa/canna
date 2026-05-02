@@ -1,3 +1,9 @@
+2026-05-02 AIDA Shinra <shinra@j10n.org>
+	* Updated the zipcode dictionary.
+	* dic/ideo/words/jigyosho.t: regenerated
+	* dic/ideo/words/zipcode.t: regenerated
+	* misc/zipcode/Imakefile: now distributed in .zip format
+
 2025-08-30 AIDA Shinra <shinra@j10n.org>
 	* [Merged] from the SFJP trunk on 2005-04-01:
 	* dic/ideo/*: Sync with DIC_WORK branch.

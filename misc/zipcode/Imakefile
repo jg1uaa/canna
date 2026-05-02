@@ -35,12 +35,11 @@ jigyosyo.raw: jigyosyo.csv
 	nkf -S -e jigyosyo.csv > jigyosyo.raw
 
 download:
-	rm -rf ken_all.lzh jigyosyo.lzh ken_all.csv jigyosyo.csv
-	wget http://www.post.japanpost.jp/zipcode/dl/kogaki/lzh/ken_all.lzh
-	wget http://www.post.japanpost.jp/zipcode/dl/jigyosyo/lzh/jigyosyo.lzh
-	lha e ken_all.lzh
-	lha e jigyosyo.lzh
-	touch *.csv
+	rm -rf ken_all.zip jigyosyo.zip ken_all.csv jigyosyo.csv
+	wget http://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip
+	wget http://www.post.japanpost.jp/zipcode/dl/jigyosyo/zip/jigyosyo.zip
+	unzip -L ken_all.zip
+	unzip -L jigyosyo.zip
 
 NormalProgramTarget(zen2han,zen2han.o,$(DEPRKINDEPLIB),$(RKINDEPLIB),)
 
@@ -48,7 +47,7 @@ clean::
 	$(RM) *.raw *.spl *.p *.t
 
 distclean:: clean
-	$(RM) *.lzh *.csv
+	$(RM) *.zip *.csv
 
 DependTarget()
 LintTarget()
