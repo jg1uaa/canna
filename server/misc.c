@@ -42,7 +42,11 @@ static char rcs_id[]="@(#) $Id: misc.c,v 1.16.2.4 2004/04/26 21:48:37 aida_s Exp
 #include <fcntl.h>
 #include <signal.h>
 #include <pwd.h>
+#include <grp.h>
 #include <sys/ioctl.h>
+#ifdef HAVE_UNISTD_H
+#include <unistd.h>
+#endif
 
 #ifndef DICHOME
 #define DICHOME     "/usr/lib/canna/dic"
@@ -578,7 +582,7 @@ const char   *hostname;
     int i;
 #else
     const struct hostent *hent;
-    const char *const *haddrp;
+    char **haddrp;
     struct in_addr numaddr;
 #endif
 
