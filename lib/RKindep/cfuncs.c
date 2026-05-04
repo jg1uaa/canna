@@ -24,7 +24,6 @@
 #include "ccompat.h"
 #include "RKindep/ecfuncs.h"
 
-RCSID("$Id: cfuncs.c,v 1.4 2008/04/05 17:29:58 aida_s Exp $");
 
 #undef malloc
 #undef calloc

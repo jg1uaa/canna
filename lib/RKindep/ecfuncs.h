@@ -20,7 +20,6 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. 
  */
 
-/* $Id: ecfuncs.h,v 1.2 2003/09/17 15:13:27 aida_s Exp $ */
 
 #ifndef	RKINDEP_ECFUNCS_H
 #define RKINDEP_ECFUNCS_H

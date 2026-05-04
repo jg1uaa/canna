@@ -24,7 +24,6 @@
 #include "ccompat.h"
 #include "RKindep/file.h"
 
-RCSID("$Id: basename.c,v 1.2 2003/03/24 04:04:25 aida_s Exp $");
 
 /*
  * basename() has at least 3 versions.

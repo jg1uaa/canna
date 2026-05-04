@@ -45,7 +45,6 @@
 /* LINTLIBRARY */
 #include "server.h"
 
-RCSID("$Id: session.c,v 1.1 2003/09/21 12:56:29 aida_s Exp $");
 
 typedef struct {
   char *ue_name;

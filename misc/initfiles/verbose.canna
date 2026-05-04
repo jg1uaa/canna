@@ -19,7 +19,6 @@
 ;; OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR 
 ;; PERFORMANCE OF THIS SOFTWARE. 
 
-;;  $Id: verbose.canna,v 1.6 2003/09/25 15:24:33 aida_s Exp $
 
 ;;; ローマ字かな変換の設定
 ;

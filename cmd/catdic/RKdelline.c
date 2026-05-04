@@ -20,7 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-static	char	rcs_id[] = "@(#) 112.1 $Id: RKdelline.c,v 1.3 2003/10/02 07:40:30 aida_s Exp $";
 
 #ifdef ENGINE_SWITCH
 #include "RKrename.h"

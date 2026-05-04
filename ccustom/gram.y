@@ -20,11 +20,8 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-/* -*-Mode: TEXT-*- $Id: gram.y,v 1.1.1.1 2002/10/19 08:27:30 aida_s Exp $ */
 
 %{
-static char rcs_id[]=
-  "@(#) 102.1 $Id: gram.y,v 1.1.1.1 2002/10/19 08:27:30 aida_s Exp $";
 
 #include <stdio.h>
 #include "iroha.h"

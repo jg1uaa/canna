@@ -20,7 +20,6 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. 
  */
 
-/* $Id: cksum.h,v 1.3 2003/09/25 14:37:24 aida_s Exp $ */
 
 #ifndef	RKINDEP_CKSUM_H
 #define RKINDEP_CKSUM_H

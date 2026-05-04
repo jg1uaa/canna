@@ -47,9 +47,6 @@ SOFTWARE.
 
 ******************************************************************/
 
-#if !defined(lint) && !defined(__CODECENTER__)
-static char rcs_id[] = "$Id: wconvert.c,v 1.16.2.1 2004/04/26 21:48:37 aida_s Exp $";
-#endif
 
 /* LINTLIBRARY */
 

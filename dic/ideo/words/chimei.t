@@ -19,7 +19,6 @@
 # OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR 
 # PERFORMANCE OF THIS SOFTWARE. 
 #
-# $Id: chimei.t,v 1.3 2005/04/01 04:27:03 aida_s Exp $
 あーかんそー #CN アーカンソー
 あいおいし #CNS 相生市
 あいおわ #CN アイオワ

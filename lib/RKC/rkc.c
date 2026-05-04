@@ -20,9 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-#if !defined(lint) && !defined(__CODECENTER__)
-static char rcs_id[] = "$Id: rkc.c,v 1.12 2003/09/24 15:01:07 aida_s Exp $";
-#endif
 
 /*
  * MODIFICATION HISTORY

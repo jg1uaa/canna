@@ -20,10 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-#ifndef lint
-static char sccs_id[]="@(#) NEC UNIX( PC-UX/EWS-UX ) cshost.c 2.1 91/11/11 11:17:51";
-static char rcs_id[] = "$Id: cshost.c,v 1.3.2.2 2003/12/27 17:15:22 aida_s Exp $";
-#endif
 
 /*
  * MODIFICATION HISTORY

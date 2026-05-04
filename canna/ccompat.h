@@ -20,7 +20,6 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. 
  */
 
-/* $Id: ccompat.h,v 1.10 2003/09/25 07:38:11 aida_s Exp $ */
 
 #ifndef CCOMPAT_H
 #define CCOMPAT_H
@@ -76,6 +75,5 @@ extern int  errno;
 
 #include "RKindep/cfuncs.h"
 
-#define RCSID(id) struct cannahack
 
 #endif /* CCOMPAT_H */

@@ -2,7 +2,6 @@
 #include "ccompat.h"
 #include <stdio.h>
 
-RCSID("$Id: mkcrctab.c,v 1.2 2004/11/21 06:37:40 aida_s Exp $");
 
 int
 main(argc, argv)

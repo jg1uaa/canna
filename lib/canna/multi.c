@@ -20,9 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-#if !defined(lint) && !defined(__CODECENTER__)
-static char m_s_map_id[] = "@(#) 102.1 $Id: multi.c,v 1.4 2007/08/08 14:54:33 aida_s Exp $";
-#endif /* lint */
 
 #include "canna.h"
 #include <canna/mfdef.h>

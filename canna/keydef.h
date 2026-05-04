@@ -20,7 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-/* @(#) 102.1 $Id: keydef.h,v 1.1.1.1 2002/10/19 08:27:28 aida_s Exp $ */
 
 /* normal function keys */
      

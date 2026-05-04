@@ -1,6 +1,5 @@
 /*
  *  buffer.h,v 1.3 2001/06/14 18:16:06 ura Exp
- *  Canna: $Id: buffer.h,v 1.2 2003/01/04 07:31:02 aida_s Exp $
  */
 
 /*

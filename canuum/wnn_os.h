@@ -1,6 +1,5 @@
 /*
  *  wnn_os.h,v 1.14 2003/06/08 03:09:51 hiroo Exp
- *  Canna: $Id: wnn_os.h,v 1.6 2004/04/25 14:16:48 aida_s Exp $
  */
 
 /*

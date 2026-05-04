@@ -19,7 +19,6 @@
 .\" OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 .\" PERFORMANCE OF THIS SOFTWARE.
 .\"
-.\" $Id: cannakill.man,v 1.2 2002/10/22 15:19:13 aida_s Exp $
 .TH CANNAKILL 1M
 .SH "NAME"
 cannakill \- Terminate operation of the Kana-Kanji conversion server

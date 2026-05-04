@@ -20,9 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-#ifndef lint
-static char rcs[] = "@(#) 112.1 $Id: can.c,v 1.4 2003/02/01 19:34:20 aida_s Exp $";
-#endif
 
 #ifdef ENGINE_SWITCH
 #include "RKrename.h"

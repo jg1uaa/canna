@@ -20,9 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-#if !defined(lint) && !defined(__CODECENTER__)
-static char rcsid[] = "$Id: bun.c,v 1.7 2005/03/10 20:07:05 aida_s Exp $";
-#endif
 
 /* LINTLIBRARY */
 

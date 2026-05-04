@@ -20,9 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-#if !defined(lint) && !defined(__CODECENTER__)
-static char rcs_id[] = "$Id: chikuji.c,v 1.4 2004/03/15 04:43:50 aida_s Exp $";
-#endif
 
 #include	"canna.h"
 

@@ -20,9 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-#if !defined(lint) && !defined(__CODECENTER__)
-static char yomimap_id[] = "@(#) 102.1 $Id: yomimap.h,v 1.1.1.1 2002/10/19 08:27:52 aida_s Exp $";
-#endif /* lint */
 
 extern int ConvertAsBushu pro((uiContext));
 extern int DoFuncSequence pro((uiContext)), UseOtherKeymap pro((uiContext));

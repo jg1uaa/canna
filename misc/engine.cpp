@@ -22,7 +22,6 @@ XCOMM
 XCOMM Configuration file for kana-kanji conversion engines.
 XCOMM
 XCOMM for Canna version 2.2
-XCOMM $Id: engine.cpp,v 1.1.1.1 2002/10/19 08:27:52 aida_s Exp $
 
 cannaserver LIBCANNADIR/libRKC    # Canna engine
 irohaserver LIBCANNADIR/libRKC    # Canna engine (same as above)

@@ -20,9 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-#ifndef lint
-static char rcsid[] = "$Id: lisp.c,v 1.2 2002/10/20 14:29:56 aida_s Exp $";
-#endif
 
 /* 
 ** main program of lisp 

@@ -47,9 +47,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-#ifndef lint
-static char rcsid[] = "$Id: canna.c,v 1.9 2003/09/17 08:50:52 aida_s Exp $";
-#endif
 
 #include "commonhd.h"
 #include "sdefine.h"

@@ -20,7 +20,6 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. 
  */
 
-/* $Id: conf.h,v 1.1 2003/08/05 12:03:02 aida_s Exp $ */
 
 #ifndef CONF_H
 #define CONF_H

@@ -23,7 +23,6 @@
 #include <stdio.h>
 #include "ccompat.h"
 
-RCSID("$Id: pod.c,v 1.5 2008/04/05 17:25:46 aida_s Exp $");
 
 typedef unsigned short Wchar;
 

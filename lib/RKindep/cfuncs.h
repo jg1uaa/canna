@@ -20,7 +20,6 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. 
  */
 
-/* $Id: cfuncs.h,v 1.1.2.1 2003/12/27 17:15:24 aida_s Exp $ */
 
 #ifndef	RKINDEP_CFUNCS_H
 #define RKINDEP_CFUNCS_H

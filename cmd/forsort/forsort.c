@@ -20,9 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-#ifndef lint
-static char rcsid[]="@(#) 112.1 $Id: forsort.c,v 1.2 2003/02/01 19:34:21 aida_s Exp $";
-#endif
 /*
  * forsort.c	ソートを行なう時に8ビットコードを保護する
  *	forsort -7 < [in-file-name] > [out-file-name]

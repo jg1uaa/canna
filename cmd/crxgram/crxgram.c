@@ -20,9 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-#ifndef LINT
-static char rcsid[]="@(#) 102.1 $Id: crxgram.c,v 1.6 2003/03/24 04:04:25 aida_s Exp $";
-#endif
 
 /* #include	"RKintern.h" */
 

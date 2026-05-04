@@ -25,7 +25,6 @@
 #include "RKindep/file.h"
 #include "RKindep/strops.h"
 
-RCSID("$Id: zen2han.c,v 1.1 2004/08/06 14:09:54 aida_s Exp $");
 
 char* zen2han[][2] = {
   {"\241\335", "-"}, /* ¡Ý */

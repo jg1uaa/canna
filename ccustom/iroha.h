@@ -20,12 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-/*
- * @(#) 102.1 $Id: iroha.h,v 1.1.1.1 2002/10/19 08:27:31 aida_s Exp $
- * $Revision: 1.1.1.1 $
- * $Author: aida_s $
- */
-
 #define MAX_DICS 16
 
 extern char *kanjidicname[];

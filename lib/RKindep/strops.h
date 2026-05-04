@@ -20,7 +20,6 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. 
  */
 
-/* $Id: strops.h,v 1.2 2003/09/06 13:59:33 aida_s Exp $ */
 
 #ifndef	RKINDEP_STROPS_H
 #define RKINDEP_STROPS_H

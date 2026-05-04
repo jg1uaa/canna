@@ -20,7 +20,6 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. 
  */
 
-/* $Id: server.h,v 1.4 2003/09/23 07:11:31 aida_s Exp $ */
 
 #ifndef	SERVER_H
 #define SERVER_H

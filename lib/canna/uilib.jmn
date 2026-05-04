@@ -19,7 +19,6 @@
 .\" OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR 
 .\" PERFORMANCE OF THIS SOFTWARE. 
 .\"
-.\" $Id: uilib.jmn,v 1.1.1.1 2002/10/19 08:27:51 aida_s Exp $ NEC;
 .if t .pn 575
 .TH UILIBINTRO 3 "4 April 1991"
 .SH "名前"
@@ -686,7 +685,6 @@ KC_QUERYMAXMODESTR \- モード表示文字列の最大長を求める．
 .ft
 .sp
 .RE
-.\" @(#)kanji.man	1.5	89/06/30 09:13:01
 .TH XLookupKanjiString 3K "1 September 1988" "X Version 11"
 .SH 名称
 XLookupKanjiString \- キーボード入力の漢字文字列への変換

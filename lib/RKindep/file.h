@@ -20,7 +20,6 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. 
  */
 
-/* $Id: file.h,v 1.5 2003/09/21 12:56:28 aida_s Exp $ */
 
 #ifndef	RKINDEP_FILE_H
 #define RKINDEP_FILE_H

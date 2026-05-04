@@ -19,7 +19,6 @@
 .\" OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 .\" PERFORMANCE OF THIS SOFTWARE.
 .\"
-.\" $Id: cannakill.jmn,v 1.2 2002/10/22 15:19:13 aida_s Exp $
 .nr X 0
 .if \nX=0 .ds X} cannakill 1M "日本語機能ユーティリティ" "\&"
 .TH \*(X}

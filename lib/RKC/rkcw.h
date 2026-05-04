@@ -20,8 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-/* sccs_id[]="@(#) NEC UNIX( PC-UX/EWS-UX ) rkw.h 2.3 91/11/11 12:01:34"; */
-/* $Id: rkcw.h,v 1.9 2003/09/17 08:50:53 aida_s Exp $ */
 
 #include "cannaconf.h"
 

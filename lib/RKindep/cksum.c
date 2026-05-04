@@ -24,7 +24,6 @@
 #include "ccompat.h"
 #include "RKindep/cksum.h"
 
-RCSID("$Id: cksum.c,v 1.5 2004/05/02 23:08:29 aida_s Exp $");
 
 static void RkiCksumCRCAdd pro((RkiCksumCalc *cx,
       const void *data, size_t len));

@@ -19,7 +19,6 @@
 ; OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 ; PERFORMANCE OF THIS SOFTWARE.
 
-; $Id: freewnn-uum.files,v 1.4 2004/04/25 14:16:48 aida_s Exp $
 
 Wnn/include/commonhd.h
 Wnn/include/wnn_config.h

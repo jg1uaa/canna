@@ -1,6 +1,5 @@
 /*
  *  jhlp.c,v 1.15 2003/05/11 18:25:29 hiroo Exp
- *  Canna: $Id: jhlp.c,v 1.12 2004/04/25 18:19:27 aida_s Exp $
  */
 
 /*
@@ -30,9 +29,6 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef lint
-static char *rcs_id = "jhlp.c,v 1.15 2003/05/11 18:25:29 hiroo Exp";
-#endif /* lint */
 
 #ifdef HAVE_CONFIG_H
 #  include <config.h>

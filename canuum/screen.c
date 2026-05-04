@@ -1,6 +1,5 @@
 /*
  *  screen.c,v 1.7 2002/06/22 13:26:21 hiroo Exp
- *  Canna: $Id: screen.c,v 1.2 2003/01/04 07:31:02 aida_s Exp $
  */
 
 /*

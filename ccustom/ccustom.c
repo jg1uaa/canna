@@ -23,7 +23,6 @@
  *
  */
 
-static	char	rcs_id[] = "@(#) 102.1 $Id: ccustom.c,v 1.2 2002/10/20 14:29:56 aida_s Exp $";
 
 #ifdef __FreeBSD__
 #include <ncurses.h>

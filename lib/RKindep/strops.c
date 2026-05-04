@@ -24,7 +24,6 @@
 #include "ccompat.h"
 #include "RKindep/strops.h"
 
-RCSID("$Id: strops.c,v 1.2 2003/09/06 13:59:33 aida_s Exp $");
 
 void
 RkiStrbuf_init(sb)

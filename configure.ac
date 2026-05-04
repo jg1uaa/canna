@@ -125,4 +125,3 @@ else
 ])
 
 AC_OUTPUT
-# $Id: configure.ac,v 1.12.2.5 2004/05/19 15:47:33 aida_s Exp $

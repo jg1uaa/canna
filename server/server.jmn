@@ -19,7 +19,6 @@
 .\" OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR 
 .\" PERFORMANCE OF THIS SOFTWARE. 
 .\"
-.\" $Id: server.jmn,v 1.10 2003/09/15 14:37:56 aida_s Exp $
 .nr X 0
 .if \nX=0 .ds X} cannaserver 1M "日本語機能ユーティリティ" "\&"
 .TH \*(X}

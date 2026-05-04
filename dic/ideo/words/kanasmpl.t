@@ -19,7 +19,6 @@
 # OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR 
 # PERFORMANCE OF THIS SOFTWARE. 
 #
-# $Id: kanasmpl.t,v 1.2 2003/09/27 06:18:39 aida_s Exp $
 #
 あーぎゅめんと #T30 アーギュメント
 あーと #T30 アート

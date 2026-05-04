@@ -25,7 +25,6 @@
 #include	<stdio.h>
 #include	<assert.h>
 
-RCSID("$Id: mergewd.c,v 1.4 2008/04/05 17:25:45 aida_s Exp $");
 
 typedef struct LineList {
   struct LineList *next;

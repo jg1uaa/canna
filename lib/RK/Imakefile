@@ -1,4 +1,3 @@
-/* $Id: Imakefile,v 1.4 2003/04/05 23:27:53 aida_s Exp $ */
 #include "../../Canna.conf"
         CANNAROOT = ../..
           DEFINES = $(DEBUGFLAGS) $(useObsoleteFilename) /* -DRK_LOG */

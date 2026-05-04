@@ -21,7 +21,6 @@
  */
 
 /* LINTLIBRARY */
-/* $Id: RKintern.h,v 1.15.2.2 2003/12/27 17:15:24 aida_s Exp $ */
 #ifndef		_RKintern_h
 #define		_RKintern_h
 

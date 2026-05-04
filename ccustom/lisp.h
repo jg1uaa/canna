@@ -20,7 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-/* $Id: lisp.h,v 1.2 2003/09/17 10:15:09 aida_s Exp $ */
 
 /* #include "keydef.h"
 #include "mfdef.h"

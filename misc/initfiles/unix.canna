@@ -19,7 +19,6 @@
 ;; OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR 
 ;; PERFORMANCE OF THIS SOFTWARE. 
 
-;;  $Id: unix.canna,v 1.6 2003/09/25 15:24:33 aida_s Exp $
 
 ;; 記号置き換え変換を利用するか。
 

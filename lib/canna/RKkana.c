@@ -20,9 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-#if !defined(lint) && !defined(__CODECENTER__)
-static char rcsid[]="@(#) 102.1 $Id: RKkana.c,v 1.4 2007/08/08 14:54:33 aida_s Exp $";
-#endif
 
 /* LINTLIBRARY */
 #include "canna.h"

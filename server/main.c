@@ -20,9 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-#if !defined(lint) && !defined(__CODECENTER__)
-static char rcs_id[] = "$Id: main.c,v 1.10 2003/09/24 14:50:40 aida_s Exp $";
-#endif
 
 /* LINTLIBRARY */
 

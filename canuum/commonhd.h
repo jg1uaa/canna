@@ -1,6 +1,5 @@
 /*
  *  commonhd.h,v 1.10 2003/05/30 16:17:59 hiroo Exp
- *  Canna: $Id: commonhd.h,v 1.8 2004/04/25 18:19:27 aida_s Exp $
  */
 
 /*

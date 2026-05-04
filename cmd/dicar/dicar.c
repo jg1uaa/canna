@@ -20,9 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-#ifndef lint
-static char rcsid[]="@(#) 102.1 $Id: dicar.c,v 1.4.2.2 2003/12/27 17:15:22 aida_s Exp $";
-#endif
 
 /*
  *	辞書アーカイバ:

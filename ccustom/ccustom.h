@@ -24,7 +24,6 @@
  */
 
 /*
-static	char	rcs_id[] = "@(#) 102.1 $Id: ccustom.h,v 1.1.1.1 2002/10/19 08:27:30 aida_s Exp $";
 */
 
 #include "symbolname.h"

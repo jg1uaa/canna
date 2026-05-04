@@ -42,4 +42,3 @@ cpdic(1), lsdic(1), mkdic(1), mvdic(1)
 .\" OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR 
 .\" PERFORMANCE OF THIS SOFTWARE. 
 .\"
-.\" $Id: rmdic.man,v 1.1.1.1 2002/10/19 08:27:33 aida_s Exp $

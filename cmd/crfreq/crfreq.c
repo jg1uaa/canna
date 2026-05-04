@@ -20,9 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-#ifndef lint
-static char rcsid[]="@(#) 102.1 $Id: crfreq.c,v 1.5.2.2 2003/12/27 17:15:21 aida_s Exp $";
-#endif
 
 #include "RKintern.h"
 #include <stdio.h>

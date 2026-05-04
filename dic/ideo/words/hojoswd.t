@@ -19,7 +19,6 @@
 # OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR 
 # PERFORMANCE OF THIS SOFTWARE. 
 #
-# $Id: hojoswd.t,v 1.2 2002/10/20 04:10:29 aida_s Exp $
 дд #Zi @ #ktok5iO @
 дл #Zka @
 дл #ktok5a @

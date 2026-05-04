@@ -1,6 +1,5 @@
 /*
  *  printf.c,v 1.3 2001/06/14 18:16:07 ura Exp
- *  Canna: $Id: printf.c,v 1.3 2003/01/04 07:31:02 aida_s Exp $
  */
 
 /*

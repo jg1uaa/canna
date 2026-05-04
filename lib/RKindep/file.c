@@ -30,7 +30,6 @@
 #include <stdio.h>
 #include <assert.h>
 
-RCSID("$Id: file.c,v 1.3 2003/09/24 14:50:40 aida_s Exp $");
 
 int
 RkiConnect(fd, addrp, len, timeout)

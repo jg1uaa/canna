@@ -20,9 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-#ifndef lint
-static char rcs_id[] = "$Id: cannaindex.c,v 1.2 2002/10/20 14:29:58 aida_s Exp $";
-#endif
 
 #include <stdio.h>
 #include "ccompat.h"

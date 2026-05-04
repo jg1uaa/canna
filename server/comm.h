@@ -20,7 +20,6 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. 
  */
 
-/* $Id: comm.h,v 1.1 2003/09/21 12:56:29 aida_s Exp $ */
 
 #ifndef	COMM_H
 #define COMM_H

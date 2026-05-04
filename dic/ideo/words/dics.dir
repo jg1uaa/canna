@@ -21,7 +21,6 @@
 #
 #	iroha.cbd
 #
-# $Id: dics.dir,v 1.6 2004/08/06 14:09:53 aida_s Exp $
 #
 fuzokugo.cbd(fuzokugo.swd)	-fuzokugo---
 iroha.cbd(iroha.mwd)		-iroha---

@@ -20,9 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-/* sccs_id[]="@(#) NEC UNIX( PC-UX/EWS-UX ) rkc.h 2.4 91/11/11 12:01:18"; */
-/* #ident	"@(#) NEC/V(386) R3.0B rkc.h 5.9 90/03/26 21:04:36" */
-/* $Id: rkc.h,v 1.5 2003/09/17 08:50:53 aida_s Exp $ */
 
 #if defined(ENGINE_SWITCH)
 #include "RKrename.h"

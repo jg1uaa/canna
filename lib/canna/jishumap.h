@@ -20,9 +20,6 @@
  * PERFORMANCE OF THIS SOFTWARE. 
  */
 
-#if !defined(lint) && !defined(__CODECENTER__)
-static char jishumap_id[] = "@(#) 102.1 $Id: jishumap.h,v 1.1.1.1 2002/10/19 08:27:49 aida_s Exp $";
-#endif /* lint */
 
 extern int DoFuncSequence pro((uiContext)), UseOtherKeymap pro((uiContext));
 extern int TbForward pro((uiContext)), TbBackward pro((uiContext));
