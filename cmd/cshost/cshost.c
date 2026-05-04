@@ -151,13 +151,13 @@ CannaDispControlList()
 	if (wp == endp)
 	    goto protoerr;
 	assert(wp + 2 <= endp);
-	printf("HOST NAME:%s\n", wp ) ;
-	wp += strlen( wp ) + 1 ;
+	printf("HOST NAME:%s\n", (char *)wp ) ;
+	wp += strlen( (char *)wp ) + 1 ;
 	if( *wp ) {
 	    printf("USER NAME:" ) ;
 	    while( *wp ) {
-		printf("%s ", wp ) ;
-		wp += strlen( wp ) + 1 ;
+		printf("%s ", (char *)wp ) ;
+		wp += strlen( (char *)wp ) + 1 ;
 	    }
 	} else
 	    printf("ALL USER" ) ;

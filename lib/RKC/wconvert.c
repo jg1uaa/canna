@@ -479,9 +479,10 @@ char *hostname ;
 	strtok( *listp, ":" ) ;
 	number = (char *)strtok( NULL, ":" ) ;
 	num = number ? atoi( number ) : 0 ;
-	strcpy( hostname, *listp ) ;
 	if( num )
-	    sprintf( hostname,"%s:%d", hostname, num ) ;
+	    sprintf( hostname,"%s:%d", *listp, num ) ;
+	else
+	    strcpy( hostname, *listp ) ;
 
 #if defined(UNIXCONN) || defined(STREAMCONN)
 	if ( (strcmp( "unix", *listp ) == 0) ) {

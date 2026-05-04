@@ -441,7 +441,7 @@ ParseFile(fp)
 	}
 	else {	
 	  if (cmd_code == DEL) {
-	    i = RkDeleteLine(cx_num, r_dic, line) ;
+	    i = RkDeleteLine(cx_num, (char *)r_dic, line) ;
 	  }
 	  else {
 	    i = RkDefineLine(cx_num, r_dic, line) ;
@@ -541,7 +541,7 @@ write_chk()
     int mode ,ret;
     mode = 0 ;
  grp:
-    ret = RkChmodDic(cx_num,opt_dic1,mode) ;
+    ret = RkChmodDic(cx_num, (unsigned char *)opt_dic1, mode) ;
     if (ret < 0) { 
 	switch (ret) {
           case NOENT:
@@ -590,7 +590,7 @@ char *dicname;
 int mode;
 {
     int ret;
-    ret = RkChmodDic(cx_num,dicname,mode) ;
+    ret = RkChmodDic(cx_num, (unsigned char *)dicname, mode) ;
     if (ret < 0) { 
 	switch (ret) {
           case NOENT:
@@ -1206,7 +1206,7 @@ char  **argv;
     (void) signal(SIGINT, StopAll);
     (void) signal(SIGQUIT, StopAll);
     (void) signal(SIGTERM, StopAll);
-    bufcnt = RkListDic(cx_num, user + user_offset, buf, BUFLEN );
+    bufcnt = RkListDic(cx_num, (unsigned char *)(user + user_offset), buf, BUFLEN );
 
     
     /*
@@ -1466,7 +1466,7 @@ int force;
 
   nwcheck() ;
 
-  switch ( RkRenameDic( cn, dicname1, dicname2, force) ) {
+  switch ( RkRenameDic( cn, (unsigned char *)dicname1, (unsigned char *)dicname2, force) ) {
   case 0 :
     fprintf(stderr,gettxt("cannacmd:166",
 	  "Change dictionary \"%s\" to \"%s\".\n"),dicname1, dicname2);
@@ -1622,7 +1622,7 @@ char  **argv;
     (void) signal(SIGQUIT, StopAll);
     (void) signal(SIGTERM, StopAll);
 
-    ret = RkChmodDic(cx_num,opt_dic1,mode);
+    ret = RkChmodDic(cx_num, (unsigned char *)opt_dic1, mode);
     if (ret < 0) { 
 	switch (ret) {
           case NOENT:

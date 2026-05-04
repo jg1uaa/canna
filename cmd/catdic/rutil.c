@@ -405,7 +405,7 @@ int mode ;
 	(void)fprintf(stderr,gettxt("cannacmd:205", 
     "Specified dictionary \"%s\" already exists. Do you overwrite it ? (y/n)"),
 		      dicname);
-	fgets(ans,80,stdin);
+	fgets(ans, sizeof ans, stdin);
     } else {
 	(void)fprintf(stderr,gettxt("cannacmd:206", 
 	    "Specified dictionary \"%s\" already exists."),dicname);
@@ -495,7 +495,7 @@ int mode ;
     if (isatty(fileno(stdin)) != 0) {
 	(void)fprintf(stderr,gettxt("cannacmd:216", 
 "Personal learning file of dictionary \"%s\" exists. Do you overwrite it ? (y/n)"),dicname);
-	fgets(ans,80,stdin);
+	fgets(ans, sizeof ans, stdin);
     } else {
 	(void)fprintf(stderr,gettxt("cannacmd:217", 
     "Personal learning file of system dictionary \"%s\" already exists."),

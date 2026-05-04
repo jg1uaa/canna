@@ -895,7 +895,7 @@ int cxnum ;
       if (client->groupname && client->groupname[0]) {
 	if (strlen(DDUSER) + strlen(client->username) +
 	    strlen(DDGROUP) + strlen(client->groupname) +
-	    strlen(DDPATH) + 4 >= 256)
+	    strlen(DDPATH) + 4 >= sizeof dichome - 1)
 	  return ( -1 );
 	sprintf(dichome, "%s/%s:%s/%s:%s",
 		DDUSER, client->username,
@@ -904,7 +904,7 @@ int cxnum ;
       }
       else {
 	if (strlen(DDUSER) + strlen(client->username) +
-	    strlen(DDPATH) + 2 >= 256)
+	    strlen(DDPATH) + 2 >= sizeof dichome - 1)
 	  return ( -1 );
 	sprintf(dichome, "%s/%s:%s",
 		DDUSER, client->username,

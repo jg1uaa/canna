@@ -1032,7 +1032,7 @@ uiContext d;
     }
   } else if (d->ch >= 0x80 /* カーソルキーなどはFunctionalInsertできない */ ||
       (!(d->ch & ~0x1f) && yc->allowedChars != CANNA_NOTHING_RESTRICTED) ||
-      charKind[d->ch - 0x20] < yc->allowedChars) {
+      ((d->ch & ~0x1f) && charKind[d->ch - 0x20] < yc->allowedChars)) {
     /* 0x20 はコントロールキャラクタの分 */
     return NothingChangedWithBeep(d);
   }
@@ -3166,6 +3166,7 @@ yomiquotedfunc(d, mode, whattodo, key, fnum)
     return 0;
   }
   /* NOTREACHED */
+  return 0;
 }
 
 static KanjiModeRec yomi_quoted_insert_mode = {

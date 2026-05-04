@@ -88,29 +88,29 @@ usage(prog)
 void
 alert(fmt, arg)
 char	*fmt;
-char	*arg;
+unsigned char	*arg;
 {
-    char	msg[256];
-    (void)sprintf(msg, fmt, arg);
-    (void)fprintf(stderr, "#line %d %s: %s\n", lineNum, fileName, msg);
+    fprintf(stderr, "#line %d %s: ", lineNum, fileName);
+    fprintf(stderr, fmt, arg);
+    fputc('\n', stderr);
 }
 void
 alerti(fmt, arg)
 char	*fmt;
 int	arg;
 {
-    char	msg[256];
-    (void)sprintf(msg, fmt, arg);
-    (void)fprintf(stderr, "#line %d %s: %s\n", lineNum, fileName, msg);
+    fprintf(stderr, "#line %d %s: ", lineNum, fileName);
+    fprintf(stderr, fmt, arg);
+    fputc('\n', stderr);
 }
 void
 fatal(fmt, arg)
 char	*fmt;
 char	*arg;
 {
-    char	msg[256];
-    (void)sprintf(msg, fmt, arg);
-    (void)fprintf(stderr, "#line %d %s: (FATAL) %s\n", lineNum, fileName, msg);
+    fprintf(stderr, "#line %d %s: (FATAL) ", lineNum, fileName);
+    fprintf(stderr, fmt, arg);
+    fputc('\n', stderr);
     exit(1);
 }
 
@@ -253,7 +253,7 @@ enterIdent(fp)
 	    s = scanToken(s, cname, sizeof(cname));
 	    c = addIdent(Column, (char *)cname, gram.ng_row, gram.ng_col);
 	    if ( !c ) {
-		alert("column <%s> redefined", rname);
+		alert("column <%s> redefined", (char *)rname);
 		continue;
 	    };
 	    cc = c;
@@ -272,7 +272,7 @@ enterIdent(fp)
 	    (void)strcat((char *)rname, (char *)tag);
 	r = addIdent(Row, (char *)rname, gram.ng_row, cc->colnum);
 	if ( !r ) {
-	    alert("row <%s> redefined", rname);
+	    alert("row <%s> redefined", (char *)rname);
 	    continue;
 	};
 	cc->numrow++;
@@ -343,7 +343,7 @@ int		op;
  		unsigned char	*rbits = GetGramRow(&gram, r->rownum);
 
 		if ( r->hasconnect == 0 )
-		    alert("Undefined row vector is referred: %s", name);
+		    alert("Undefined row vector is referred: %s", (char *)name);
 		else {
 		    switch(op) {
 		    case '+':
@@ -358,7 +358,7 @@ int		op;
 		};
 	    }
 	    else 
-		alert("unknown row %s", name);
+		alert("unknown row %s", (char *)name);
 	}
 	else {
 	    if ( c = probeIdent(Column, (char *)name) ) 
@@ -376,7 +376,7 @@ int		op;
 	      }
 #ifndef LOGIC_HACK
 	    else 
-		alert("unknown column %s", name);
+		alert("unknown column %s", (char *)name);
 #else
 	    else if ( r = probeIdent(Row, (char *)name) ) {
 	      int n = r->rownum;
@@ -391,7 +391,7 @@ int		op;
 	      }
 	    }
 	    else
-	      alert("unknown row/column %s", name);
+	      alert("unknown row/column %s", (char *)name);
 #endif /* not LOGIC_HACK */
 	};
     };
@@ -494,7 +494,7 @@ enterNeg(fp)
 	    int j;
 
 	    nextS = scanToken(nextS, namevec, sizeof(namevec));
-	    name = strtok(namevec, SEP);
+	    name = strtok((char *)namevec, SEP);
 	    for (j = 0; name && j < 255;) {
 		if (r = probeIdent(Row, name))
 		    rdata[i][j++] = r->rownum;

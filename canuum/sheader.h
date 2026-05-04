@@ -478,3 +478,11 @@ extern int do_U_opt ();
 #endif /* KOREAN */
 
 extern void romkan_set_lang ();
+#if defined(__STDC__) || defined(__cplusplus)
+# define pro(x) x
+#else
+# define pro(x) ()
+#endif
+extern void wnn_delete_w_ss2 pro((w_char *, int));
+extern int openTermData pro((void));
+#undef pro

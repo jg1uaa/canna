@@ -2177,7 +2177,7 @@ char *arg;
       return 0;
     }
   }
-  return (int)RkwGetServerName();
+  return RkwGetServerName() != NULL;
 }
 
 static int
@@ -2243,7 +2243,7 @@ jrUserInfoStruct *arg;
                     sprintf(buf, "%s/%s",
 			    uinfo->topdir ? uinfo->topdir : "", "default.can");
                   }
-                  wcKanjiControl((int)d, KC_SETINITFILENAME, buf);
+                  wcKanjiControl((int)(POINTERINT)d, KC_SETINITFILENAME, buf);
 		  RkwSetUserInfo(uinfo->uname, uinfo->gname, uinfo->topdir);
                   ret = 1;
 		  goto return_ret;

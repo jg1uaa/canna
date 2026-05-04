@@ -880,7 +880,7 @@ init_dic(name, dictype, maxpage)
   if (!(dic = (struct dictionary *)malloc(sizeof(struct dictionary)))
        || !(dic->Dir = (struct direc *)malloc(sizeof(struct direc)))
        || !(dic->Wlist = (struct wlist *)malloc(sizeof(struct wlist)))
-       || !(dic->Page = (struct page *)malloc(maxpage*sizeof(struct page)))
+       || !(dic->Page = (struct page *)calloc(maxpage, sizeof(struct page)))
     ) {
     fprintf(stderr, "no space\n");
     exit(1);
@@ -895,11 +895,6 @@ init_dic(name, dictype, maxpage)
   for (i = 0; i < dic->TotalPage; i++) {
     dic->Page[i].buf = (unsigned char *)0;
     dic->Page[i].diroff = dic->Page[i].dirsiz = PAGE_HDR_SIZ;
-    dic->Page[i].lnksiz = dic->Page[i].wrdsiz =
-      dic->Page[i].wrdoff = dic->Page[i].nwrecs =
-	dic->Page[i].nnode = dic->Page[i].ndir =
-	  dic->Page[i].nlinks = dic->Page[i].nwrecs =
-	    dic->Page[i].candnum = 0;
     dic->Page[i].first_lvo = dic->Page[i].first_csn = -1;
   }
   dic->MaxCand = _RkCalcUnlog2(11);

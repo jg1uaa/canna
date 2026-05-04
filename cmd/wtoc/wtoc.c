@@ -144,8 +144,8 @@ void wtoi_write( fp, yomi, hinshi, kouho, hindo )
      int	hindo;
 {
   if( !strcmp((char *)hinshi,"#kxuru") || !strcmp((char *)hinshi,"#sxuru")){
-    strcat(yomi,"る");
-    strcat(kouho,"る");
+    strcat((char *)yomi,"る");
+    strcat((char *)kouho,"る");
   }
   if( hindo == 0 )
     fprintf( fp, "%s %s %s \n", yomi, hinshi, kouho );
@@ -215,9 +215,8 @@ int main(argc,argv)
   while( fgets( (char *)S, sizeof(S), fpi ) ) {
     if( 4 >  sscanf( (char *)S, "%s %s %s %s", y, k, h, nd ) )
       continue;
-    else      
-      d = suuji(nd);
-      wtoi_write( fpo, y, chghinshi( h, taiou, fshurui ), k, d );
+    d = suuji(nd);
+    wtoi_write( fpo, y, chghinshi( h, taiou, fshurui ), k, d );
   } 
   
   fclose( fpi );

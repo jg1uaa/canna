@@ -75,8 +75,7 @@ allocStr(s)
   int	len;
   
   if ((len = strlen(s)) && (d = malloc(len + 1))) {
-    (void)strncpy(d, s, len);
-    d[len] = (char)0;
+    strncpy(d, s, len + 1);
   }
   return(d);
 }

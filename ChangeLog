@@ -1,15 +1,31 @@
+2026-05-04 AIDA Shinra <shinra@j10n.org>
+	* Reduce warnings
+	* canuum/*: fix -Wformat-overflow, -Wimplicit-function-declaration,
+	  -Wimplicit-int, -Wreturn-type, -Wpointer-sign, -Wpointer-to-int-cast,
+	  -Wpointer-sign, -Wrestrict and -Wstringop-truncation
+	* cmd/*: ditto
+	* lib/RK/*: ditto
+	* lib/RKC/*: ditto
+	* lib/canna/*: dito
+	* server/*: ditto
+	* cmd/catdic/rutil.c(makeDictionary): fixed a buffer overrun
+	* cmd/crxdic/crxdic.c(init_dic): fixed a wrong initialization
+	* cmd/wtoc/wtoc.c(main): fixed a wrong "else" clause
+	* lib/canna/engine.c(RkSetServerName): fixed a wrong NUL termination
+	* lib/canna/romaji.c(YomiInsert): fixed a table out of bound bug
+
 2026-05-03 AIDA Shinra <shinra@j10n.org>
 	* [Pulled] from https://github.com/jg1uaa/canna/tree/fix-implicit-int
 	  Author: SASANO Takayoshi <uaa@uaa.org.uk>
 	* Newer comilers do not allow implicit int. Fixed.
-        * cmd/*: fix -Wimplicit-int
+	* cmd/*: fix -Wimplicit-int
 	* lib/RK/*: ditto
 	* lib/RKC/*: ditto
 	* lib/canna/*: dito
 	* server/*: ditto
 	* cmd/catdic/can.c(add_main): fixed scan_opt args
 	* lib/canna/canna.h: prototypes are sorted by source file
-        * server/misc.c: fix -Wimcompatible-pointer-types
+	* server/misc.c: fix -Wincompatible-pointer-types
 
 2026-05-02 AIDA Shinra <shinra@j10n.org>
 	* Updated the zipcode dictionary.

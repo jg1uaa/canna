@@ -563,8 +563,11 @@ struct sockaddr_un *unaddr;
     ir_debug( Dmsg(5, "Path to socket is too long\n"));
     goto last;
   }
-  if( PortNumberPlus )
-    sprintf( unaddr->sun_path, "%s:%d", unaddr->sun_path, PortNumberPlus ) ;
+  if( PortNumberPlus ) {
+    char portbuf[4];
+    sprintf(portbuf, ":%d", PortNumberPlus);
+    strcat(unaddr->sun_path, portbuf);
+  }
   if ((request = socket (AF_UNIX, SOCK_STREAM, 0)) < 0)
   {
     ir_debug( Dmsg(5, "Warning: UNIX socket for server failed.\n"));

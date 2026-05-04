@@ -159,6 +159,7 @@ int fnum;
     break;
   }
   /* NOTREACHED */
+  return 0;
 }
 
 /* 逐次読みモード用 */

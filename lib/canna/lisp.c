@@ -3296,6 +3296,7 @@ Ldefmode()
     error("defmode: illegal subfunction ", edata);
   }
   /* NOTREACHED */
+  return NIL;
 }
 
 static list
@@ -3527,6 +3528,7 @@ int tku, tten, num, kodata;
   else {
     error("Insufficient memory", NON);
     /* NOTREACHED */
+    return NULL;
   }
 }
 
@@ -3864,6 +3866,7 @@ Ldefmenu()
   }
   error("Insufficient memory", NON);
   /* NOTREACHED */
+  return NIL;
 }
 #endif /* NO_EXTEND_MENU */
 
@@ -4272,7 +4275,7 @@ static list VCodeInput(setp, arg) int setp; list arg;
     }
   }
   /* else { .. */
-  if (/* 0 <= cannaconf.code_input && /* unsigned にしたので冗長になった */
+  if (/* 0 <= cannaconf.code_input && */ /* unsigned にしたので冗長になった */
       cannaconf.code_input <= CANNA_CODE_KUTEN) {
     return copystring(input_code[cannaconf.code_input],
 		      strlen(input_code[cannaconf.code_input]));

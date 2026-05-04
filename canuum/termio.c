@@ -37,6 +37,7 @@
 #if STDC_HEADERS
 #  include <stdlib.h>
 #endif /* STDC_HEADERS */
+#include <string.h>
 
 #include "commonhd.h"
 #include "sdefine.h"
@@ -110,7 +111,7 @@ openTermData ()
       return (-1);
     }
 #endif /* defined(uniosu) */
-  if (save_cursor == (char *) NULL || *save_cursor == NULL || restore_cursor == (char *) NULL || *restore_cursor == NULL || change_scroll_region == (char *) NULL || *change_scroll_region == NULL)
+  if (save_cursor == NULL || *save_cursor == '\0' || restore_cursor == NULL || *restore_cursor == '\0' || change_scroll_region == NULL || *change_scroll_region == '\0')
     {
       fprintf (stderr, "Your terminal is not strong enough. Goodbye !\n");
       return (-1);

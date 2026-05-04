@@ -86,6 +86,9 @@ static char rcsid[] = "$Id: canna.c,v 1.9 2003/09/17 08:50:52 aida_s Exp $";
 
 #include <fcntl.h>
 #include <ctype.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 
 #include "wnn_os.h"
 
@@ -94,7 +97,18 @@ static char rcsid[] = "$Id: canna.c,v 1.9 2003/09/17 08:50:52 aida_s Exp $";
 #define PARTIALREDRAW 1
 #define NOREDRAW      0
 
-extern	int	errno;
+extern int RkMapPhonogram
+  pro((struct RkRxDic *, unsigned char *, int, unsigned char *, int,
+       unsigned, int,
+       int *, int *, int *, int *));
+extern int RkCvtRoma
+  pro((struct RkRxDic *, unsigned char *, int, unsigned char *, int,
+       unsigned));
+extern void RkCloseRoma pro((struct RkRxDic *));
+static int colwidth pro((const w_char *, int));
+static int skipchars pro((const w_char *, int, int *));
+static int cannakeyentry pro((char *, int));
+static void debugprint pro((const char *, const char *, const char *, const char *));
 
 static int maxmodelen;
 static int maxwidth = 0;
@@ -251,13 +265,13 @@ w_char *ws1, *ws2;
   return ws1;
 }
 
-static
+static int
 colwidth(s, len)
-w_char *s;
+const w_char *s;
 int     len;
 {
   int ret = 0;
-  w_char *es = s + len;
+  const w_char *es = s + len;
 
   for (; s < es ; s++) {
     switch (*s & 0x8080) {
@@ -287,9 +301,9 @@ int     len;
 
  */
 
-static
+static int
 skipchars(s, wi, ov)
-w_char *s;
+const w_char *s;
 int wi, *ov;
 {
   int ret, swi;
@@ -325,7 +339,6 @@ int init_uum() /* originally defined in prologue.c */
   char **msg, *p;
   extern char *prog;
   extern void ring_bell();
-  extern (*jrBeepFunc) pro((void));
   void registerkeys(), cannakeydef();
 
   for (p = prog ; *p ; p++) { /* use basename */
@@ -363,7 +376,7 @@ int init_uum() /* originally defined in prologue.c */
 
   set_screen_vars_default(); /* will set maxwidth */
 
-  wcKanjiControl(0, KC_SETWIDTH, (char *)(maxwidth + 1));
+  wcKanjiControl(0, KC_SETWIDTH, (char *)(canna_intptr_t)(maxwidth + 1));
   /* plus 1 is for ``rightover'' character. */
 
   throw_cur_raw(0 ,crow + conv_lines);
@@ -1136,7 +1149,7 @@ registerkeys()
   eseqdic = RkCreateRoma(sequences, nsequences);
 }
 
-static
+static int
 cannakeyentry(s, ident)
 char *s;
 int ident;
@@ -1203,7 +1216,7 @@ int flag;
 /* ARGSUSED */
 {
 #ifdef TERMCAP
-  char xx[MAXSEQUENCE], *p = xx, *q, *tgetstr();
+  char xx[MAXSEQUENCE], *p = xx, *q;
 
   char	tcaparea[AREASIZE];
 
@@ -1305,7 +1318,8 @@ char *yyy; /* ARGSUSED */
       }
       seqbuf[i++] = ch;
       seqbuf[i] = '\0';
-      res = RkMapPhonogram(eseqdic, xxx, MAXSEQUENCELEN, seqbuf + 1, i - 1,
+      res = RkMapPhonogram(eseqdic, (unsigned char *)xxx, MAXSEQUENCELEN,
+	                   (unsigned char *)seqbuf + 1, i - 1,
 			   0, 0, &n, &dummy1, &dummy2, &dummy3);
     } while (!n && i < MAXSEQUENCELEN - 1);
     if (!(ch < 0) && res) {
@@ -1421,7 +1435,7 @@ char *lang;
 
 int
 hani_settei_normal(c_b) /* originally defined in touroku.c */
-/* struct buf *c_b; */
+struct buf *c_b;
 /* ARGSUSED */
 {
   return 0;
@@ -1468,10 +1482,11 @@ int call_t_redraw_move_2_normal(x, start1, start2, end1, end2, clt_l, add)
 int call_redraw_line_normal(x, add) int x, add; /* ARGSUSED */ { return 0; }
 
 
+static void
 debugprint(fmt, a, b, c)
-char *fmt, *a, *b, *c;
+const char *fmt, *a, *b, *c;
 {
-  FILE *f, *fopen();
+  FILE *f;
 
   f = fopen("/tmp/kon", "a");
   fprintf(f, fmt, a, b, c);

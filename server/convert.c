@@ -213,7 +213,7 @@ const BYTE *buf;
 size_t size;
 {
     ir_debug( Dmsg(10, "WriteClient:") );
-    ir_debug( DebugDump( 10, buf, size ) );
+    ir_debug( DebugDump( 10, (const char *)buf, size ) );
     return ClientBuf_store_reply(client->client_buf, buf, size);
 }
 #else
@@ -382,6 +382,7 @@ ClientBuf *client_buf;
 
 #ifdef USE_EUC_PROTOCOL
 
+static int
 ir_finalize(clientp)
 register ClientPtr *clientp ;
 {
@@ -395,6 +396,7 @@ register ClientPtr *clientp ;
     return( 0 ) ;
 }
 
+static int
 ir_killserver(clientp)
 register ClientPtr *clientp;
 {
@@ -405,6 +407,7 @@ register ClientPtr *clientp;
     return 0;
 }
 
+static int
 ir_create_context(clientp)
 ClientPtr *clientp ;
 {
@@ -425,6 +428,7 @@ ClientPtr *clientp ;
     return SendTypeE1Reply(client, stat);
 }
 
+static int
 ir_duplicate_context(clientp)
 ClientPtr *clientp ;
 {
@@ -448,6 +452,7 @@ ClientPtr *clientp ;
     return SendTypeE1Reply(client, stat);
 }
 
+static int
 ir_close_context(clientp)
 ClientPtr *clientp ;
 {
@@ -466,6 +471,7 @@ ClientPtr *clientp ;
     return SendTypeE1Reply(client, stat);
 }
 
+static int
 ir_dictionary_list(clientp)
 ClientPtr *clientp ;
 {
@@ -491,6 +497,7 @@ ClientPtr *clientp ;
     return SendTypeE2Reply(client, ret, (ret < 0)? 0: ret, dicnames, size);
 }
 
+static int
 ir_get_yomi( clientp )
 ClientPtr *clientp ;
 {
@@ -523,6 +530,7 @@ ClientPtr *clientp ;
     return SendTypeE2Reply(client, ret, (ret > 0)? 1: 0, yomi, size);
 }
 
+static int
 ir_set_dic_path( clientp )
 ClientPtr *clientp ;
 /* ARGSUSED */
@@ -530,6 +538,7 @@ ClientPtr *clientp ;
     return( 0 ) ;
 }
 
+static int
 ir_define_dic(clientp)
 ClientPtr *clientp ;
 {
@@ -554,6 +563,7 @@ ClientPtr *clientp ;
     return SendTypeE1Reply(client, ret);
 }
 
+static int
 ir_delete_dic(clientp)
 ClientPtr *clientp ;
 {
@@ -578,6 +588,7 @@ ClientPtr *clientp ;
     return SendTypeE1Reply(client, ret);
 }
 
+static int
 ir_get_dir_list(clientp)
 ClientPtr *clientp ;
 {
@@ -602,6 +613,7 @@ ClientPtr *clientp ;
     return SendTypeE2Reply(client, ret, (ret < 0)? 0: ret, dicnames, size);
 }
 
+static int
 ir_mount_dictionary(clientp)
 ClientPtr *clientp ;
 {
@@ -624,6 +636,7 @@ ClientPtr *clientp ;
     return SendTypeE1Reply(client, ret);
 }
 
+static int
 ir_umount_dictionary(clientp)
 ClientPtr *clientp ;
 {
@@ -642,6 +655,7 @@ ClientPtr *clientp ;
     return SendTypeE1Reply(client, ret);
 }
 
+static int
 ir_rmount_dictionary(clientp)
 ClientPtr *clientp ;
 {
@@ -662,6 +676,7 @@ ClientPtr *clientp ;
     return SendTypeE1Reply(client, ret);
 }
 
+static int
 ir_mount_list( clientp )
 ClientPtr *clientp ;
 {
@@ -687,6 +702,7 @@ ClientPtr *clientp ;
     return SendTypeE2Reply(client, ret, (ret < 0)? 0: ret, dicnames, size);
 }
 
+static int
 ir_convert( clientp )
 ClientPtr *clientp ;
 {
@@ -724,6 +740,7 @@ ClientPtr *clientp ;
     return ret;
 }
 
+static int
 ir_convert_end( clientp )
 ClientPtr *clientp ;
 {
@@ -766,6 +783,7 @@ ClientPtr *clientp ;
     return SendTypeE1Reply(client, ret);
 }
 
+static int
 ir_get_kanjilist( clientp )
 ClientPtr *clientp ;
 {
@@ -819,6 +837,7 @@ ClientPtr *clientp ;
     return SendTypeE2Reply(client, ret, (ret < 0)? 0: (ret + 1), kouho, size);
 }
 
+static int
 ir_resize(clientp)
 ClientPtr *clientp ;
 {
@@ -898,6 +917,7 @@ ClientPtr *clientp ;
     return ret;
 }
 
+static int
 ir_query_extension( clientp )
 ClientPtr *clientp ;
 {
@@ -920,6 +940,7 @@ ClientPtr *clientp ;
 static void iroha2canna pro((char *));
 
 #ifdef EXTENSION
+static int
 ir_list_dictionary( clientp )
 ClientPtr *clientp ;
 {
@@ -957,6 +978,7 @@ ClientPtr *clientp ;
 }
 
 
+static int
 ir_create_dictionary( clientp )
 ClientPtr *clientp ;
 {
@@ -976,6 +998,7 @@ ClientPtr *clientp ;
 }
 
 
+static int
 ir_remove_dictionary( clientp )
 ClientPtr *clientp ;
 {
@@ -994,6 +1017,7 @@ ClientPtr *clientp ;
     return SendTypeE1Reply(client, ret);
 }
 
+static int
 ir_rename_dictionary( clientp )
 ClientPtr *clientp ;
 {
@@ -1013,6 +1037,7 @@ ClientPtr *clientp ;
     return SendTypeE1Reply(client, ret);
 }
 
+static int
 ir_get_word_text_dic( clientp )
 ClientPtr *clientp ;
 {
@@ -1098,6 +1123,7 @@ BYTE *src, *dest;
     return ret;
 }
 
+static int
 ir_get_stat( clientp )
 ClientPtr *clientp ;
 {
@@ -1150,6 +1176,7 @@ BYTE *src, *dest;
     return tangosu;
 }
 
+static int
 ir_get_lex( clientp )
 ClientPtr *clientp ;
 {
@@ -1518,7 +1545,7 @@ const char *hostname;
 
     req0->Type = (int)L4TOL(data);
     ir_debug( Dmsg(10, "NewReadRequest:") );
-    ir_debug( DebugDump( 10, (char *)data, len ) );
+    ir_debug( DebugDump( 10, (const char *)data, len ) );
     ir_debug(Dmsg(5,"Client: <%s@%s> [%d]\n",
 		   username0, hostname0, req0->Type ));
 
@@ -1551,7 +1578,7 @@ const char *hostname;
 	ReqCallFunc = Vector[ req0->Type ].extdat;
 	CallFunc = Vector[ req0->Type ].func;
     }
-    if( (needsize = (* ReqCallFunc)( data, len ))  < 0 ) {
+    if( (needsize = (* ReqCallFunc)( (char *)data, len ))  < 0 ) {
 	if (username) {
 	    PrintMsg( "[%s] ", username  ) ;
 	}
@@ -1590,6 +1617,7 @@ int size ;
 
 #ifdef USE_EUC_PROTOCOL
 
+int
 ProcReq1( buf, size )
 char *buf ;
 int size ;
@@ -1638,6 +1666,7 @@ int size ;
 
 #ifdef USE_EUC_PROTOCOL
 
+int
 ProcReq3( buf, size )
 char *buf ;
 int size ;
@@ -1967,13 +1996,14 @@ const char *buf ;
 			strcat( (char *)buf1, "   " ) ;
 			strcat( (char *)buf2, " " ) ;
 		    } else {
-			sprintf( (char *)buf1,
-				"%s%02x ", buf1, (c = buf[i + j]) & 0xFF);
+			char buf3[4];
+			sprintf(buf3, "%02x ", (c = buf[i + j]) & 0xFF);
+			strcat(buf1, buf3);
 			if((unsigned)(c & 0xff) >= (unsigned)' ' &&
 			   (unsigned)(c & 0xff) < (unsigned)0x7f )
-			    sprintf( (char *)buf2,"%s%c", buf2, c ) ;
+			    buf2[j] = c;
 			else
-			    sprintf( (char *)buf2,"%s.", buf2 ) ;
+			    buf2[j] = '.';
 		    }
 	    }
 	    Dmsg( level," %05x %s     %s\n", count++,  buf1, buf2 );

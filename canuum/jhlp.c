@@ -146,10 +146,12 @@ spt_handle *spth = NULL;
 int need_utmp_clear = 0;
 #endif
 
+#ifndef HAVE_UNISTD_H
 extern char *optarg;
 extern int optind;
 
 extern char *ttyname ();
+#endif /* !HAVE_UNISTD_H */
 
 static void save_signals ();
 static void restore_signals ();
@@ -2167,7 +2169,7 @@ setsize ()
 {
   register int i;
   struct winsize win;
-  extern Term_LineWidth, Term_RowWidth, maxlength, crow;
+  extern int Term_LineWidth, Term_RowWidth, maxlength, crow;
 
   if (ioctl (ttyfd, TIOCGWINSZ, &win) < 0)
     {
@@ -2194,7 +2196,7 @@ change_size ()
 {
   register int i;
   struct winsize win;
-  extern Term_LineWidth, Term_RowWidth, maxlength, crow;
+  extern int Term_LineWidth, Term_RowWidth, maxlength, crow;
 
   if (ioctl (ttyfd, TIOCGWINSZ, &win) < 0)
     {

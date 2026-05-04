@@ -453,15 +453,11 @@ int flag ;
     if( flag ) {
 	ascdate = asctime( tt ) ;
     } else {
-	sprintf( ctime,"%s %d", week[ tt->tm_wday ], tt->tm_mday ) ;
-	if( tt->tm_hour > 12 )
-	  sprintf( ctime,"%s %2d:%02dpm", ctime, tt->tm_hour - 12, tt->tm_min ) ;
-	else if( tt->tm_hour == 12 )
-	  sprintf( ctime,"%s 12:%02dpm", ctime, tt->tm_min ) ;
-	else if( tt->tm_hour == 0 )
-	  sprintf( ctime,"%s 12:%02dam", ctime, tt->tm_min ) ;
-	else
-	  sprintf( ctime,"%s %2d:%02dam", ctime, tt->tm_hour, tt->tm_min ) ;
+	sprintf(ctime, "%s %d %2d:%02d%s",
+		week[ tt->tm_wday ], tt->tm_mday,
+		(tt->tm_hour > 12) ? (tt->tm_hour - 12) : (tt->tm_hour == 12) ? 12 : tt->tm_hour,
+		tt->tm_min,
+		(tt->tm_hour >= 12) ? "pm" : "am");
 	
 	sprintf( utime,"%02u:%02u:%02u", (Uint)udate/3600,
 		(Uint)(udate%3600)/60, (Uint)(udate%3600)%60 ) ;

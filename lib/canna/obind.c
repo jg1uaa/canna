@@ -501,7 +501,7 @@ BYTE *arg;
     /* list_cbはKC_setListCallbackでd->elistcbに引っ越す */
     list_cb.client_data = (char *)arg;
     list_cb.callback_func = &owcListCallback;
-    ret = XwcKanjiControl2(display, window, request, (char *)&list_cb);
+    ret = XwcKanjiControl2(display, window, request, (BYTE *)&list_cb);
     goto return_ret;
   default: /* 新ワイドと変わらないもの */
     ret = XwcKanjiControl2(display, window, request, arg);
