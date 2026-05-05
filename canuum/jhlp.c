@@ -1821,7 +1821,7 @@ int ttyfd, ttypfd;
 
 /** ttyp のオープン */
 
-#ifndef USE_LIBSPT
+#if !defined(USE_LIBSPT) && !defined(HAVE_POSIX_OPENPT)
 #define MAXPTYNO (0x10 * (('z' - 'p' + 1) + ('Z' - 'P' + 1)))
 int ptyno;
 char *ptynm = "/dev/pty";
@@ -1835,7 +1835,7 @@ char *ttypnm = "/dev/tty";
 #ifndef sgi
 static void ptyname ();
 #endif
-#endif /* !USE_LIBSPT */
+#endif /* !USE_LIBSPT && !HAVE_POSIX_OPENPT */
 
 static void
 open_ttyp ()
@@ -1843,22 +1843,22 @@ open_ttyp ()
   char nmbuf[20];
 
 #ifdef USE_LIBSPT
-  if ((ttypfd = spt_open_slave(spth)) == ERROR)
-    {
+  ttypfd = spt_open_slave(spth);
+#elif defined(HAVE_POSIX_OPENPT)
+  ttypfd = open(ptsname(ptyfd), O_RDWR);
 #elif defined(sgi)
-  if ((ttypfd = open (ttypnm, O_RDWR)) == ERROR)
-    {
+  ttypfd = open (ttypnm, O_RDWR);
 #else
   ptyname (nmbuf, ttypnm, ptyno);
-  if ((ttypfd = open (nmbuf, O_RDWR, 0)) == ERROR)
-    {
+  ttypfd = open (nmbuf, O_RDWR, 0);
 #endif
+  if (ttypfd == ERROR) {
       uum_err ("Can't open ttyp.");
     }
-#if !defined(USE_LINUX_TERM) && !defined(USE_LIBSPT)
+#if !defined(USE_LINUX_TERM) && !defined(USE_LIBSPT) && !defined(HAVE_POSIX_OPENPT)
   chown (nmbuf, getuid (), getgid ());
   chmod (nmbuf, 0622);
-#endif /* !USE_LINUX_TERM && !USE_LIBSPT */
+#endif /* !USE_LINUX_TERM && !USE_LIBSPT && !HAVE_POSIX_OPENPT */
 #if defined(USE_LIBSPT)
   spt_init_slavefd(spth, ttypfd);
 #elif defined(I_PUSH) && defined(SVR4)
@@ -1904,6 +1904,18 @@ open_pty ()
   r = spt_open_pty(&spth, &ptyfd, NULL, NULL);
   if (r != SPT_E_NONE && r != SPT_E_CHOWN_FAIL)
     uum_err ("Can't get pty.");
+  return;
+}
+#elif defined(HAVE_POSIX_OPENPT)
+static void
+open_pty ()
+{
+  ptyfd = posix_openpt (O_RDWR | O_NOCTTY);
+  if (ptyfd < 0 || grantpt (ptyfd) || unlockpt (ptyfd)) {
+    if (ptyfd >= 0)
+      close (ptyfd);
+    uum_err ("Can't get pty.");
+  }
   return;
 }
 #elif defined(sgi)
@@ -1976,7 +1988,7 @@ do_end ()
 
   j_term_restore ();
 
-#if !defined(USE_LIBSPT) && !defined(sgi)
+#if !defined(USE_LIBSPT) && !defined(HAVE_POSIX_OPENPT) && !defined(sgi)
   ptyname (nmbuf, ptynm, ptyno);
   if (chown (nmbuf, 0, 0) == ERROR)
     {
@@ -1997,7 +2009,7 @@ do_end ()
       perror (prog);
     }
 
-#endif /* !USE_LIBSPT && !sgi */
+#endif /* !USE_LIBSPT && !HAVE_POSIX_OPENPT && !sgi */
   close (ttyfd);
 #ifdef USE_LIBSPT
   if (spth && need_utmp_clear && (r = spt_logout_utmp(spth)))
@@ -2066,7 +2078,7 @@ ioctl_off ()
 #endif /* defined(uniosu) */
 
 
-#if !defined(USE_LIBSPT) && !defined(sgi)
+#if !defined(USE_LIBSPT) && !defined(HAVE_POSIX_OPENPT) && !defined(sgi)
 static void
 ptyname (b, pty, no)
      char *b, *pty;
@@ -2091,7 +2103,7 @@ ptyname (b, pty, no)
     }
 #endif /* ! 4.4BSD-Lite */
 }
-#endif /* !USE_LIBSPT && !sgi */
+#endif /* !USE_LIBSPT && !HAVE_POSIX_OPENPT && !sgi */
 
 static void
 default_usage ()

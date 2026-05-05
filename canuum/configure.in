@@ -388,7 +388,7 @@ dnl Terminal library selection. (ported from vim6.1)
 dnl
 olibs="$LIBS"
 AC_MSG_CHECKING(--with-term-libs argument)
-AC_ARG_WITH(tlib,
+AC_ARG_WITH(term-libs,
 [  --with-term-libs=-lLIB    terminal library to be used ],)
 if test -n "$with_term_libs"; then
   AC_MSG_RESULT($with_term_libs)
@@ -501,7 +501,7 @@ dnl AC_FUNC_WAIT3
 AC_CHECK_FUNCS(random drand48 fchmod getopt killpg \
 	FD_SET \
 	gethostname select socket closesocket setsockopt send recv \
-	getdtablesize getrlimit syslog vsyslog setenv snprintf)
+	getdtablesize getrlimit syslog vsyslog setenv snprintf posix_openpt)
 dnl for bcopy/index -> memcpy/strchr conversion (preparation):
 AC_CHECK_FUNCS(bcopy bzero bcmp index rindex \
 	memcpy memmove memset strchr strrchr)

@@ -78,6 +78,9 @@
 /* Define to 1 if you have the <ncurses.h> header file. */
 #undef HAVE_NCURSES_H
 
+/* Define to 1 if you have the `posix_openpt' function. */
+#undef HAVE_POSIX_OPENPT
+
 /* Define to 1 if you have the `random' function. */
 #undef HAVE_RANDOM
 

@@ -1,3 +1,12 @@
+2026-05-06 AIDA Shinra <shinra@j10n.org>
+	* Use posix_openpt(3) instead of libspt.
+	* canuum/README.jp: no longer mention libspt
+	* canuum/Imakefile: don't link libspt
+	* canuum/configure.in: check posix_openpt(3), s/tlib/term-libs/
+	* canuum/configure: ditto
+	* canuum/config.h.in: ditto
+	* canuum/jhlp.c: use posix_openpt(3) if available
+
 2026-05-04 AIDA Shinra <shinra@j10n.org>
 	* Remove RCSID/SCCSIDs
 

@@ -16,9 +16,9 @@ TERMCAP_LIB = -ltermcap
 INSTUGIDFLAGS = 
      CANNASRC = $(CANNAROOT)/lib/canna16
       DEFINES = -DCANNA -DJAPANESE $(SIGNAL_DEFINES) -DHAVE_CONFIG_H \
-		-DCONFIG_TERMINFO -DUSE_LIBSPT
-     INCLUDES = -I$(CANNAROOT)/include -I. `libspt-config --cflags`
-SYS_LIBRARIES = $(TERMCAP_LIB) `libspt-config --libs`
+		-DCONFIG_TERMINFO
+     INCLUDES = -I$(CANNAROOT)/include -I.
+SYS_LIBRARIES = $(TERMCAP_LIB)
 
          SRCS = header.c printf.c termio.c termcap.c \
 		screen.c cursor.c jhlp.c xutoj.c canna.c

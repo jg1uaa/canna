@@ -688,7 +688,7 @@ ac_subst_files=''
 ac_user_opts='
 enable_option_checking
 with_x
-with_tlib
+with_term_libs
 '
       ac_precious_vars='build_alias
 host_alias
@@ -3893,9 +3893,9 @@ olibs="$LIBS"
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking --with-term-libs argument" >&5
 $as_echo_n "checking --with-term-libs argument... " >&6; }
 
-# Check whether --with-tlib was given.
-if test "${with_tlib+set}" = set; then :
-  withval=$with_tlib;
+# Check whether --with-term-libs was given.
+if test "${with_term_libs+set}" = set; then :
+  withval=$with_term_libs;
 fi
 
 if test -n "$with_term_libs"; then
@@ -4364,7 +4364,7 @@ done
 for ac_func in random drand48 fchmod getopt killpg \
 	FD_SET \
 	gethostname select socket closesocket setsockopt send recv \
-	getdtablesize getrlimit syslog vsyslog setenv snprintf
+	getdtablesize getrlimit syslog vsyslog setenv snprintf posix_openpt
 do :
   as_ac_var=`$as_echo "ac_cv_func_$ac_func" | $as_tr_sh`
 ac_fn_c_check_func "$LINENO" "$ac_func" "$as_ac_var"

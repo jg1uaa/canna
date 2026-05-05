@@ -18,12 +18,7 @@ ASTEC により開発された Wnn のオリジナル版をベースに作られていました。
 
 1. canuum の作り方
 
- まず、補助ライブラリとして、 libspt:
- http://www.j10n.org/libspt/
- をインストールします。そして、 libspt-config のあるディレクトリにPATHを
- 通しておきます。
-
- canuum 本体は、次の手順で作成します。
+ canuum は、次の手順で作成します。
 
  (1) xmkmf する。
 
